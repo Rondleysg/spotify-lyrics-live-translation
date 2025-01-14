@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Spotify Lyrics Live Translator",
+    "version": "1.0",
+    "description": "A browser extension to automatically translate Spotify lyrics live",
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["https://open.spotify.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://open.spotify.com/*"],
+        "js": ["scripts/content.js"]
+      }
+    ],
+    "action": {
+        "default_popup": "popup/index.html",
+        "default_icon": "images/Spotify_Primary.png"
+    }
+  }
+  
